@@ -107,9 +107,7 @@ export default tseslint.config({
 
 Here are some screenshots of the 3D evacuation plan in action:
 
-![Screenshot 1](screenshots/screenshot1.png)
-*3D view of the building model with evacuation arrows.*
-
+<img width="2495" height="1339" alt="image" src="https://github.com/user-attachments/assets/2e935899-4336-4674-89d0-131704bdfda8" />
 
 
 ---
