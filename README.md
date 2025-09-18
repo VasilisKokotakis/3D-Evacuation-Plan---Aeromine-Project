@@ -112,9 +112,14 @@ Here are some screenshots of the 3D evacuation plan in action:
 
 ---
 
-## Video Demo
+## 🎥 Demo Video
 
-Watch a short video demo of the application:
+See the 3D viewer in action:
+
+![Demo](demo/demo.gif)
+
+
+---
 
 
 
