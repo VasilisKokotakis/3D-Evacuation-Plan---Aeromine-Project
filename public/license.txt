@@ -1,0 +1,11 @@
+Model Information:
+* title:	Apartment layout of a dream house
+* source:	https://sketchfab.com/3d-models/apartment-layout-of-a-dream-house-644b80bb80354d83a31b680313992a34
+* author:	Maxim Lukyanov (https://sketchfab.com/Mad_Huron)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Apartment layout of a dream house" (https://sketchfab.com/3d-models/apartment-layout-of-a-dream-house-644b80bb80354d83a31b680313992a34) by Maxim Lukyanov (https://sketchfab.com/Mad_Huron) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

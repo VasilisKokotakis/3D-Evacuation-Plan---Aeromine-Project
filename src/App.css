@@ -1,0 +1,14 @@
+/* This removes default margins that browsers put on the <body> tag, */
+/* ensuring our app takes up the full screen without scrollbars. */
+body {
+  margin: 0;
+  /* overflow: hidden prevents scrollbars from appearing if content overflows */
+  overflow: hidden;
+}
+
+/* Basic styling for the root element of our React app */
+/* Vite typically mounts your React app into a div with id="root" */
+#root {
+  width: 100vw; /* 100% of viewport width */
+  height: 100vh; /* 100% of viewport height */
+}
