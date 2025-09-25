@@ -1,4 +1,3 @@
-````markdown
 # 3D Evacuation Plan — Aeromine Project
 
 This project is a **3D evacuation plan application** developed for **Aeromine** as part of one of their patents.  
@@ -31,41 +30,26 @@ It visualizes **3D models of buildings** and overlays **directional arrows** for
 
 ## 📦 Installation
 
-1. Clone the repository:
+1. **Clone the repository** 📥
    ```bash
    git clone https://github.com/<your-org>/3D-Evacuation-Plan-Aeromine.git
    cd 3D-Evacuation-Plan-Aeromine
-````
 
-2. Install dependencies:
-
+2. **Install dependencies** 🛠️
    ```bash
    npm install
-   ```
 
-3. Start the development server:
-
+3. **Start the development serve**r 🚀
    ```bash
    npm run dev
-   ```
 
-4. Open in your browser:
-
-   ```
-   http://localhost:5173
-   ```
-
-5. Build for production:
-
+4. **Build for production** 🏗️
    ```bash
    npm run build
-   ```
-
-6. Preview production build:
-
+   
+5. **Preview production build** 👀
    ```bash
    npm run preview
-   ```
 
 ---
 
@@ -151,4 +135,4 @@ This project is **open source**, licensed under the [MIT License](LICENSE).
 
 ## 👨‍💻 Authors
 
-Developed by **Vasileios** in collaboration with **Aeromine**.
+Developed by **Vasileios Kokotakis** in collaboration with **Aeromine**.
