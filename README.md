@@ -1,13 +1,13 @@
 # 3D Evacuation Plan — Aeromine Project
 
-This project is a **3D evacuation plan application** developed for **Aeromine** as part of one of their patents.  
-**All copyrights are owned by Aeromine.**
+This project is a **3D evacuation plan application** developed for **[Aeromine](https://www.aeromine.info/)** as part of one of their patents.  
+**All copyrights are owned by [Aeromine](https://www.aeromine.info/).**
 
 It visualizes **3D models of buildings** and overlays **directional arrows** for evacuation purposes.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Interactive 3D environment rendered in the browser
 - Display `.gltf` 3D models of buildings
@@ -16,7 +16,7 @@ It visualizes **3D models of buildings** and overlays **directional arrows** for
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **React 19** — Frontend library  
 - **TypeScript** — Strongly typed JavaScript  
@@ -28,32 +28,32 @@ It visualizes **3D models of buildings** and overlays **directional arrows** for
 
 ---
 
-## 📦 Installation
+## Installation
 
-1. **Clone the repository** 📥
+1. **Clone the repository**
    ```bash
    git clone https://github.com/<your-org>/3D-Evacuation-Plan-Aeromine.git
    cd 3D-Evacuation-Plan-Aeromine
 
-2. **Install dependencies** 🛠️
+2. **Install dependencies**
    ```bash
    npm install
 
-3. **Start the development serve**r 🚀
+3. **Start the development server**
    ```bash
    npm run dev
 
-4. **Build for production** 🏗️
+4. **Build for production** 
    ```bash
    npm run build
    
-5. **Preview production build** 👀
+5. **Preview production build**
    ```bash
    npm run preview
 
 ---
 
-## 🔧 Usage
+## Usage
 
 * Replace the default `.gltf` model with your own inside the `public/` folder.
 * Adjust the **coordinates for arrows** in the source code (`src/`) to align with your model’s evacuation paths.
@@ -61,49 +61,7 @@ It visualizes **3D models of buildings** and overlays **directional arrows** for
 
 ---
 
-## ⚙️ Development Setup
-
-### ESLint Configuration (Optional)
-
-For production or stricter linting:
-
-```js
-// eslint.config.js
-import tseslint from '@ts-eslint/config'
-
-export default tseslint.config({
-  extends: [
-    ...tseslint.configs.recommendedTypeChecked,
-    ...tseslint.configs.strictTypeChecked,
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-Optional React-specific linting:
-
-```js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: { 'react-x': reactX, 'react-dom': reactDom },
-  rules: {
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-
----
-
-## 📸 Screenshots
+## Screenshots
 
 Here are some screenshots of the 3D evacuation plan in action:
 
@@ -111,7 +69,7 @@ Here are some screenshots of the 3D evacuation plan in action:
 
 ---
 
-## 🎥 Demo Video
+## Demo Video
 
 See the 3D viewer in action:
 
@@ -119,20 +77,20 @@ See the 3D viewer in action:
 
 ---
 
-## 📖 License
+## License
 
 This project is **open source**, licensed under the [MIT License](LICENSE).
-⚠️ However, the **idea and patent rights belong to Aeromine**.
+However, the **idea and patent rights belong to Aeromine**.
 
 ---
 
-## 📝 Notes
+## Notes
 
 * Currently, this is a **static prototype**.
 * Future development aims to support **dynamic building layouts** and **interactive evacuation paths**.
 
 ---
 
-## 👨‍💻 Authors
+## Authors
 
-Developed by **Vasileios Kokotakis** in collaboration with **Aeromine**.
+Developed by **Vasileios Kokotakis** in collaboration with **[Aeromine](https://www.aeromine.info/)**.
