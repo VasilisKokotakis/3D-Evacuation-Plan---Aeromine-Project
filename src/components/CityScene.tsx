@@ -9,7 +9,7 @@ interface CitySceneProps {
   gltfPath: string;
   showFire: boolean;
   selectedLocation: string;
-  resetCamera: boolean;
+  resetCamera: number;
 }
 
 interface ArrowProps {

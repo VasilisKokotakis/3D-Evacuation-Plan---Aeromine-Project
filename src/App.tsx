@@ -7,7 +7,7 @@ function App() {
 
   const [selectedRoom, setSelectedRoom] = useState<string>('');
   const [showFire, setShowFire] = useState<boolean>(false);
-  const [resetCameraTrigger, setResetCameraTrigger] = useState<boolean>(false);
+  const [resetCameraTrigger, setResetCameraTrigger] = useState<number>(0);
   const [statusMessage, setStatusMessage] = useState<string>('');
 
   const cityLocations = ['OTE Building', 'Road Point 1', 'Road Point 2', 'OAKA'];
@@ -23,8 +23,7 @@ function App() {
   };
 
   const handleResetCamera = () => {
-    setResetCameraTrigger(true);
-    setTimeout(() => setResetCameraTrigger(false), 100);
+    setResetCameraTrigger(prev => prev + 1);
   };
 
   return (
