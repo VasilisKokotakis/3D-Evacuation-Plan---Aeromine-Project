@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF, Html, Center } from '@react-three/drei';
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
@@ -20,19 +20,17 @@ interface ArrowProps {
 }
 
 const Arrow: React.FC<ArrowProps> = ({ start, end, color = 'blue' }) => {
-  const startVec = new Vector3(...start);
-  const endVec = new Vector3(...end);
-  const direction = new Vector3().subVectors(endVec, startVec).normalize();
-  const length = startVec.distanceTo(endVec);
+  const arrowHelper = useMemo(() => {
+    const startVec = new Vector3(...start);
+    const endVec = new Vector3(...end);
+    const direction = new Vector3().subVectors(endVec, startVec).normalize();
+    const length = startVec.distanceTo(endVec);
+    return new THREE.ArrowHelper(direction, startVec, length, new THREE.Color(color), 5, 2);
+  }, [start, end, color]);
 
-  const arrowHelper = new THREE.ArrowHelper(
-    direction,
-    startVec,
-    length,
-    new THREE.Color(color),
-    5, // Head Length
-    2  // Head Width
-  );
+  useEffect(() => {
+    return () => { arrowHelper.dispose(); };
+  }, [arrowHelper]);
 
   return <primitive object={arrowHelper} />;
 };
