@@ -63,18 +63,34 @@ function App() {
 
         <button
           onClick={handlePlaceFire}
-          disabled={!selectedRoom}
+          disabled={!selectedRoom || showFire}
           style={{
             padding: '10px 15px',
             background: '#ff4d4d',
             color: 'white',
             border: 'none',
             borderRadius: '5px',
-            cursor: selectedRoom ? 'pointer' : 'not-allowed'
+            cursor: selectedRoom && !showFire ? 'pointer' : 'not-allowed'
           }}
         >
           Place Fire
         </button>
+
+        {showFire && (
+          <button
+            onClick={() => { setShowFire(false); setStatusMessage('Fire cleared.'); }}
+            style={{
+              padding: '10px 15px',
+              background: '#555',
+              color: 'white',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer'
+            }}
+          >
+            Clear Fire
+          </button>
+        )}
 
         {statusMessage && (
           <div style={{ fontSize: '13px', color: '#ffcc00' }}>{statusMessage}</div>
