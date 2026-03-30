@@ -1,4 +1,4 @@
-# 3D Evacuation Plan — Aeromine Project
+# 3D Evacuation Plan - Aeromine Project
 
 This project is a **3D evacuation plan application** developed for **[Aeromine](https://www.aeromine.info/)** as part of one of their patents.  
 **All copyrights are owned by [Aeromine](https://www.aeromine.info/).**
@@ -18,13 +18,13 @@ It visualizes **3D models of buildings** and overlays **directional arrows** for
 
 ## Tech Stack
 
-- **React 19** — Frontend library  
-- **TypeScript** — Strongly typed JavaScript  
-- **Vite** — Fast build tool  
-- **Three.js** — 3D rendering engine  
-- **React Three Fiber** — React renderer for Three.js  
-- **@react-three/drei** — Useful helpers for R3F  
-- **ESLint** — Code linting  
+- **React 19** - Frontend library  
+- **TypeScript** - Strongly typed JavaScript  
+- **Vite** - Fast build tool  
+- **Three.js** - 3D rendering engine  
+- **React Three Fiber** - React renderer for Three.js  
+- **@react-three/drei** - Useful helpers for R3F  
+- **ESLint** - Code linting  
 
 ---
 
@@ -56,7 +56,7 @@ It visualizes **3D models of buildings** and overlays **directional arrows** for
 ## Usage
 
 * Replace the default `.glb` model with your own inside the `public/` folder.
-* To add or edit locations and evacuation routes, update `src/data/evacuationRoutes.ts` — no other files need to be changed.
+* To add or edit locations and evacuation routes, update `src/data/evacuationRoutes.ts` - no other files need to be changed.
 * Run the project (`npm run dev`) and view it locally in your browser.
 
 ---
