@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF, Html, Center } from '@react-three/drei';
+import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import { Group, Vector3 } from 'three';
 import * as THREE from 'three';
 import FireEffect from './FireEffect';
@@ -40,7 +41,7 @@ const Arrow: React.FC<ArrowProps> = ({ start, end, color = 'blue' }) => {
 const CityScene: React.FC<CitySceneProps> = ({ gltfPath, showFire, selectedLocation, resetCamera }) => {
   const { scene } = useGLTF(gltfPath);
   const sceneRef = useRef<Group>(null);
-  const controlsRef = useRef<any>(null);
+  const controlsRef = useRef<OrbitControlsImpl>(null);
 
   useEffect(() => {
     if (resetCamera && controlsRef.current) {
