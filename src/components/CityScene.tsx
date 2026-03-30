@@ -139,7 +139,7 @@ const CityScene: React.FC<CitySceneProps> = ({ gltfPath, showFire, selectedLocat
               alignItems: 'center',
               gap: '5px'
             }}>
-              <span>Fire in OTE's building, please use arrows to go to OAKA!</span>
+              <span>Fire at {selectedLocation}! Follow the arrows to reach a safe spot.</span>
             </div>
           </Html>
         </>
