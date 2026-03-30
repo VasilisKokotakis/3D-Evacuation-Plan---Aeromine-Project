@@ -32,8 +32,8 @@ It visualizes **3D models of buildings** and overlays **directional arrows** for
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/<your-org>/3D-Evacuation-Plan-Aeromine.git
-   cd 3D-Evacuation-Plan-Aeromine
+   git clone https://github.com/VasilisKokotakis/3D-Evacuation-Plan---Aeromine-Project.git
+   cd 3D-Evacuation-Plan---Aeromine-Project
 
 2. **Install dependencies**
    ```bash
@@ -55,8 +55,8 @@ It visualizes **3D models of buildings** and overlays **directional arrows** for
 
 ## Usage
 
-* Replace the default `.gltf` model with your own inside the `public/` folder.
-* Adjust the **coordinates for arrows** in the source code (`src/`) to align with your model’s evacuation paths.
+* Replace the default `.glb` model with your own inside the `public/` folder.
+* To add or edit locations and evacuation routes, update `src/data/evacuationRoutes.ts` — no other files need to be changed.
 * Run the project (`npm run dev`) and view it locally in your browser.
 
 ---
@@ -79,8 +79,8 @@ See the 3D viewer in action:
 
 ## License
 
-This project is **open source**, licensed under the [MIT License](LICENSE).
-However, the **idea and patent rights belong to Aeromine**.
+The **source code** is licensed under the [MIT License](LICENSE).
+The **concept, method, and patent rights** belong to [Aeromine](https://www.aeromine.info/).
 
 ---
 
