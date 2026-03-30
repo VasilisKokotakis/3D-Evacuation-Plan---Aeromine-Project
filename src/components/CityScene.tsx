@@ -86,7 +86,7 @@ const CityScene: React.FC<CitySceneProps> = ({ gltfPath, showFire, selectedLocat
         cityLocations['six'],
         cityLocations['seven']
       ],
-      safeSpot: 'Some New Safe Spot' // You can set an appropriate safe spot name here
+      safeSpot: 'OAKA'
     }
     // ----------------------
   };
