@@ -5,6 +5,7 @@ import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import { Group, Vector3 } from 'three';
 import * as THREE from 'three';
 import FireEffect from './FireEffect';
+import { LOCATIONS, ROUTES } from '../data/evacuationRoutes';
 
 interface CitySceneProps {
   gltfPath: string;
@@ -35,7 +36,6 @@ const Arrow: React.FC<ArrowProps> = ({ start, end, color = 'blue' }) => {
   return <primitive object={arrowHelper} />;
 };
 
-
 const CityScene: React.FC<CitySceneProps> = ({ gltfPath, showFire, selectedLocation, resetCamera }) => {
   const { scene } = useGLTF(gltfPath);
   const sceneRef = useRef<Group>(null);
@@ -47,48 +47,8 @@ const CityScene: React.FC<CitySceneProps> = ({ gltfPath, showFire, selectedLocat
     }
   }, [resetCamera]);
 
-  const cityLocations: { [key: string]: [number, number, number] } = {
-    'OTE Building': [-40, 1, 25],
-    'Road Point 1': [-43, 1, 18],
-    'Road Point 2': [-7, 1, -30],
-    'OAKA': [15, 1, -15],
-    // --- ADDED NEW LOCATIONS ---
-    'two': [-29.8, 1, 14],
-    'three': [-15, 1, 20],
-    'four': [0, 1, 25],
-    'five': [18.5, 1, 12],
-    'six': [1, 1, 2],
-    'seven': [15, 1, -15],
-    // ---------------------------
-  };
-
-  const firePosition = selectedLocation ? cityLocations[selectedLocation] : null;
-
-  const navigationPaths: { [key: string]: { path: [number, number, number][], safeSpot: string } } = {
-    'OTE Building': { // Original path to OAKA
-      path: [
-        cityLocations['OTE Building'],
-        cityLocations['Road Point 1'],
-        cityLocations['Road Point 2'],
-        cityLocations['OAKA']
-      ],
-      safeSpot: 'OAKA'
-    },
-    // --- ADDED NEW PATH ---
-    'OTE Building - Path 2': {
-      path: [
-        cityLocations['OTE Building'],
-        cityLocations['two'],
-        cityLocations['three'],
-        cityLocations['four'],
-        cityLocations['five'],
-        cityLocations['six'],
-        cityLocations['seven']
-      ],
-      safeSpot: 'OAKA'
-    }
-    // ----------------------
-  };
+  const firePosition = selectedLocation ? LOCATIONS[selectedLocation] : null;
+  const activeRoutes = ROUTES.filter(r => r.start === selectedLocation);
 
   return (
     <Canvas
@@ -112,7 +72,6 @@ const CityScene: React.FC<CitySceneProps> = ({ gltfPath, showFire, selectedLocat
           object={scene}
           ref={sceneRef}
           rotation={[0, Math.PI, 0]}
-          // scale={0.1} // Uncomment and adjust if your city model is too big/small
         />
       </Center>
 
@@ -144,42 +103,18 @@ const CityScene: React.FC<CitySceneProps> = ({ gltfPath, showFire, selectedLocat
         </>
       )}
 
-      {/* --- NEW: Render Navigation Arrows for all relevant paths --- */}
-      {showFire && selectedLocation && (
-        Object.keys(navigationPaths).map(pathKey => {
-          const pathData = navigationPaths[pathKey];
-          // Check if this path's starting point matches the selected fire location
-          // And if the selected location is 'OTE Building'
-          if (selectedLocation === 'OTE Building' && pathData.path[0] === cityLocations['OTE Building']) {
-            return (
-              <React.Fragment key={pathKey}> {/* Use React Fragment to group arrows of each path */}
-                {pathData.path.map((point, index) => {
-                  // Only draw an arrow if there's a next point in the path
-                  if (index < pathData.path.length - 1) {
-                    const nextPoint = pathData.path[index + 1];
-                    // Raise the arrow slightly above the ground (Y-coordinate)
-                    const adjustedStart = [point[0], point[1] + 2, point[2]] as [number, number, number];
-                    const adjustedEnd = [nextPoint[0], nextPoint[1] + 2, nextPoint[2]] as [number, number, number];
-
-                    return (
-                      <Arrow
-                        key={`${pathKey}-${index}`} // Unique key for each arrow across paths
-                        start={adjustedStart}
-                        end={adjustedEnd}
-                        color={pathKey === 'OTE Building' ? "yellow" : "lime"} // Yellow for original, Lime for new path
-                        // You can still adjust headLength and headWidth inside the Arrow component definition
-                      />
-                    );
-                  }
-                  return null;
-                })}
-              </React.Fragment>
-            );
-          }
-          return null;
+      {showFire && activeRoutes.map(route =>
+        route.waypoints.map((name, index) => {
+          if (index === route.waypoints.length - 1) return null;
+          const point = LOCATIONS[name];
+          const next = LOCATIONS[route.waypoints[index + 1]];
+          const start: [number, number, number] = [point[0], point[1] + 2, point[2]];
+          const end: [number, number, number] = [next[0], next[1] + 2, next[2]];
+          return (
+            <Arrow key={`${route.id}-${index}`} start={start} end={end} color={route.color} />
+          );
         })
       )}
-      {/* --- END NEW --- */}
 
     </Canvas>
   );

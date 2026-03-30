@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CityScene from './components/CityScene';
+import { LOCATIONS } from './data/evacuationRoutes';
 import './App.css';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
   const [resetCameraTrigger, setResetCameraTrigger] = useState<number>(0);
   const [statusMessage, setStatusMessage] = useState<string>('');
 
-  const cityLocations = ['OTE Building', 'Road Point 1', 'Road Point 2', 'OAKA'];
+  const cityLocations = Object.keys(LOCATIONS);
 
 
   const handlePlaceFire = () => {
