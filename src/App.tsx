@@ -8,6 +8,7 @@ function App() {
   const [selectedRoom, setSelectedRoom] = useState<string>('');
   const [showFire, setShowFire] = useState<boolean>(false);
   const [resetCameraTrigger, setResetCameraTrigger] = useState<boolean>(false);
+  const [statusMessage, setStatusMessage] = useState<string>('');
 
   const cityLocations = ['OTE Building', 'Road Point 1', 'Road Point 2', 'OAKA'];
 
@@ -15,9 +16,9 @@ function App() {
   const handlePlaceFire = () => {
     if (selectedRoom) {
       setShowFire(true);
-      alert(`Fire placed in ${selectedRoom}!`);
+      setStatusMessage(`Fire placed at ${selectedRoom}!`);
     } else {
-      alert('Please select a location first!');
+      setStatusMessage('Please select a location first.');
     }
   };
 
@@ -74,6 +75,10 @@ function App() {
         >
           Place Fire
         </button>
+
+        {statusMessage && (
+          <div style={{ fontSize: '13px', color: '#ffcc00' }}>{statusMessage}</div>
+        )}
 
         <button
           onClick={handleResetCamera}
